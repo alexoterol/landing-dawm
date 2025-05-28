@@ -1,1 +1,38 @@
+# Node modules
+node_modules/
 
+# Vite build output
+dist/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Optional: for JetBrains IDEs
+*.iml
+out/
+
+# Mac specific
+*.DS_Store
+
+# Linux specific
+*~
+
+# Windows specific
+*.log
+
+# Optional: if you're using TypeScript
+*.tsbuildinfo
