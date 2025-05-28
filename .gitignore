@@ -1,38 +1,24 @@
-# Node modules
-node_modules/
-
-# Vite build output
-dist/
-
-# Log files
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Environment variables
-.env
-.env.*.local
+node_modules
+dist
+dist-ssr
+*.local
 
-# System files
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-
-# IDEs
-.vscode/
-.idea/
-
-# Optional: for JetBrains IDEs
-*.iml
-out/
-
-# Mac specific
-*.DS_Store
-
-# Linux specific
-*~
-
-# Windows specific
-*.log
-
-# Optional: if you're using TypeScript
-*.tsbuildinfo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
