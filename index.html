@@ -117,41 +117,99 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Locations</h2>
-            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-              <div class="flex items-stretch p-4 gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyctaQRhUYocixCpGbOd5C3JkdRfJvcD35GFV96SJkCnHLjw4Yn6fdh7ihKxwsJp5-PtPPMXzrSmkR1p-cbKvS3mM-xSM9BIjORsJXOe6HEbmAiQ97WkWszyd0kfwVu_n19bL_K_U8onLqw8kvVPvXTSGUzuZc8rPav4lxV3O56GDIShKJT5c4KTJgiSnEl9DSFBh-FUb8zqAVRwzlngm_KH8AiWJe_axdzdDB0-hQHjED-SARm4TlraTb1fSZPPYoIJbwRQvqapE");'
-                  ></div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">City Center</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">123 Main Street, City Center</p>
+            
+            <section class="w-full overflow-hidden">
+              <h2 class="text-white text-[22px] font-bold px-4 pb-3 pt-5">Ubicaciones</h2>
+
+              <div class="relative">
+                <!-- Flechas carrusel -->
+                <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2">←</button>
+                <button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2">→</button>
+
+                <!-- Carrusel -->
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out w-full overflow-x-auto snap-x scroll-smooth scrollbar-hide">
+                  <!-- Slide Ubicación -->
+                  <div class="min-w-full md:min-w-full md:flex md:items-center md:justify-center snap-center">
+                    <div class="flex flex-col md:flex-row bg-[#1a1a1a] rounded-xl shadow-md p-4 gap-6 w-full max-w-5xl">
+                      <!-- Vista dinámica -->
+                      <div class="relative w-full md:w-1/2 aspect-square md:aspect-auto">
+                        <iframe alt="Mapa ubicación" class="rounded-xl w-full h-full object-cover" id="mapa-1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.98012001427!2d-79.91881102503234!3d-2.161266597819533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6d3860181f0f%3A0x54caebdd9158fce!2sRukito%20Grill%26Drinks%20-%20Urdesa!5e0!3m2!1ses-419!2sec!4v1749423127700!5m2!1ses-419!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <img src="src/img/crowd-meter-example.png" alt="Crowdmeter" class="rounded-xl w-full h-full object-cover hidden" id="crowdmeter-1">
+
+                        <!-- Toggle switch -->
+                        <div class="absolute top-2 left-2 flex items-center gap-2">
+                          <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" value="" class="sr-only peer" onchange="toggleVista('1')">
+                            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600">
+                              <div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition peer-checked:translate-x-full"></div>
+                            </div>
+                          </label>
+                          <span class="text-white text-sm">Crowdmeter</span>
+                        </div>
+                      </div>
+
+                      <!-- Info ubicación -->
+                      <div class="flex flex-col justify-center gap-3 text-white md:w-1/2">
+                        <p class="text-lg font-bold">Local Urdesa</p>
+                        <p class="text-sm text-[#adadad]">Av. Victor Emilio Estrada, frente al banco Pichincha</p>
+                        <p class="text-xs italic text-[#8a8a8a]">Diagonal al parque central</p>
+
+                        <div class="flex items-center gap-2 pt-2">
+                          <button class="flex items-center gap-1 px-3 py-1 border border-white text-white font-bold rounded hover:bg-white hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l.4 2M7 13l1.5 1.5L13 10l1.5 1.5M16 17h2a2 2 0 002-2v-5a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 0010.586 5H7a2 2 0 00-2 2v10a2 2 0 002 2h9z" />
+                            </svg>
+                            Contacto
+                          </button>
+                          <span class="text-sm text-[#adadad]">0991234567</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPaRz4M23Wu1WpZuECtd-V1t5dWvzKomsFsvCeKHV4IghjYPU3fOSrQEKLzxhHFmRUZZEYZePCoXzWpVv5siVpt1bN0Y8jcRs3k6vh4B3OddvXI8Jydwp_flz-qWCCWysS4G-9Zdzu0aqoHhNkC9wF4bXn7jL4QSVsannXIjv03QI07wg43-kpP2j1ZLkSwcBUxYV2kAoj9T99kKSDmG3wIFg3dlFfD4wss3EX179HxifVRfTmaRkdOD6D0f4zqATWoVm8xE2Q5eI");'
-                  ></div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">Downtown</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">456 Oak Avenue, Downtown</p>
+
+                  <div class="min-w-full md:min-w-full md:flex md:items-center md:justify-center snap-center">
+                    <div class="flex flex-col md:flex-row bg-[#1a1a1a] rounded-xl shadow-md p-4 gap-6 w-full max-w-5xl">
+                      <!-- Vista dinámica -->
+                      <div class="relative w-full md:w-1/2 aspect-square md:aspect-auto">
+                        <iframe alt="Mapa ubicación" class="rounded-xl w-full h-full object-cover" id="mapa-1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.98012001427!2d-79.91881102503234!3d-2.161266597819533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6d3860181f0f%3A0x54caebdd9158fce!2sRukito%20Grill%26Drinks%20-%20Urdesa!5e0!3m2!1ses-419!2sec!4v1749423127700!5m2!1ses-419!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <img src="src/img/crowd-meter-example.png" alt="Crowdmeter" class="rounded-xl w-full h-full object-cover hidden" id="crowdmeter-1">
+
+                        <!-- Toggle switch -->
+                        <div class="absolute top-2 left-2 flex items-center gap-2">
+                          <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" value="" class="sr-only peer" onchange="toggleVista('1')">
+                            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600">
+                              <div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition peer-checked:translate-x-full"></div>
+                            </div>
+                          </label>
+                          <span class="text-white text-sm">Crowdmeter</span>
+                        </div>
+                      </div>
+
+                      <!-- Info ubicación -->
+                      <div class="flex flex-col justify-center gap-3 text-white md:w-1/2">
+                        <p class="text-lg font-bold">Local Urdesa</p>
+                        <p class="text-sm text-[#adadad]">Av. Victor Emilio Estrada, frente al banco Pichincha</p>
+                        <p class="text-xs italic text-[#8a8a8a]">Diagonal al parque central</p>
+
+                        <div class="flex items-center gap-2 pt-2">
+                          <button class="flex items-center gap-1 px-3 py-1 border border-white text-white font-bold rounded hover:bg-white hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l.4 2M7 13l1.5 1.5L13 10l1.5 1.5M16 17h2a2 2 0 002-2v-5a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 0010.586 5H7a2 2 0 00-2 2v10a2 2 0 002 2h9z" />
+                            </svg>
+                            Contacto
+                          </button>
+                          <span class="text-sm text-[#adadad]">0991234567</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc3MRIvr8NHAvvx6h1fOQ9Cl00GQMjQEcb-ktjkQmqVSa8ZH3sIxCOOLK3szcu1o4MDWCFtHM9LGi-Lb-qfDh_9SzWvujJkYW_l_3xVTnmHCpQxEebnRoBToAndhq9SbtBG1x8vYV9yj56z-5re4Jf0SgTnkh2kGYAKB83gFnhKdxty1k33zWwvfEJfNhVszH-1LbnvXoXrgGKjoWZ2Pq4vSHuwvVzWima0MTs7PnXjRu4F85hCaauedBuMh-gHN3p8jxJ9zH_MiQ");'
-                  ></div>
-                  <div>
-                    <p class="text-white text-base font-medium leading-normal">Suburbia</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">789 Pine Lane, Suburbia</p>
-                  </div>
+                  <!-- Puedes duplicar este slide para más ubicaciones -->
                 </div>
               </div>
-            </div>
+            </section>
+
+
             <div class="flex justify-stretch">
               <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
                 <button
@@ -183,7 +241,7 @@
                   <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-2S3.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
                       ></path>
                     </svg>
                   </div>
@@ -436,4 +494,14 @@
       </div>
     </div>
   </body>
+  <script src="src/js/toggle.js"></script>
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </html>
