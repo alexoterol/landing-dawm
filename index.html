@@ -78,6 +78,7 @@
                 </div>
               </div>
             </div>
+
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Latest from TikTok</h2>
             <div class="pb-3">
               <div class="flex border-b border-[#4d4d4d] px-4 gap-8">
@@ -92,6 +93,48 @@
                 </a>
               </div>
             </div>
+            
+            <section class="bg-slate-50 dark:bg-gray-900">
+              <div class="max-w-4xl pt-8 pb-3 mx-auto">
+                <div id="skeleton-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+
+                      <!-- Skeleton Card -->
+                      <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
+                      <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
+                      <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                      <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
+                      <div class="space-y-2">
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
+                      </div>
+                      </div>
+
+                      <!-- Skeleton Card -->
+                      <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
+                      <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
+                      <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                      <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
+                      <div class="space-y-2">
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
+                      </div>
+                      </div>
+
+                      <!-- Skeleton Card -->
+                      <div class="animate-pulse space-y-4 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow">
+                      <div class="w-full h-40 bg-gray-300 dark:bg-gray-700 rounded-lg"></div>
+                      <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
+                      <div class="h-5 bg-gray-300 dark:bg-gray-700 rounded w-1/2"></div>
+                      <div class="space-y-2">
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-full"></div>
+                          <div class="h-3 bg-gray-300 dark:bg-gray-700 rounded w-5/6"></div>
+                      </div>
+                      </div>
+
+                  </div>
+              </div>
+          </section>
+
             <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
               <div class="flex items-stretch p-4 gap-3">
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
@@ -137,7 +180,7 @@
                         <img src="src/img/crowd-meter-example.png" alt="Crowdmeter" class="rounded-xl w-full h-full object-cover hidden" id="crowdmeter-1">
 
                         <!-- Toggle switch -->
-                        <div class="absolute top-2 left-2 flex items-center gap-2">
+                        <div class="absolute top-2 right-2 bg-[#1c1c1e] rounded-xl px-3 py-2 flex items-center gap-2 shadow-md">
                           <label class="relative inline-flex items-center cursor-pointer">
                             <input type="checkbox" value="" class="sr-only peer" onchange="toggleVista('1')">
                             <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600">
@@ -175,7 +218,7 @@
                         <img src="src/img/crowd-meter-example.png" alt="Crowdmeter" class="rounded-xl w-full h-full object-cover hidden" id="crowdmeter-1">
 
                         <!-- Toggle switch -->
-                        <div class="absolute top-2 left-2 flex items-center gap-2">
+                        <div class="absolute top-2 right-2 bg-[#1c1c1e] rounded-xl px-3 py-2 flex items-center gap-2 shadow-md">
                           <label class="relative inline-flex items-center cursor-pointer">
                             <input type="checkbox" value="" class="sr-only peer" onchange="toggleVista('1')">
                             <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600">
@@ -210,239 +253,243 @@
             </section>
 
 
-            <div class="flex justify-stretch">
-              <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-between">
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-white text-[#1a1a1a] text-sm font-bold leading-normal tracking-[0.015em]"
-                >
-                  <span class="truncate">Contact</span>
-                </button>
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#363636] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-                >
-                  <span class="truncate">Crowd Indicator</span>
-                </button>
-              </div>
-            </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Social Media Reviews</h2>
-            <div class="flex flex-col gap-8 overflow-x-hidden bg-[#1a1a1a] p-4">
-              <div class="flex flex-col gap-3 bg-[#1a1a1a]">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0qw6WibMsu16Odt3zPHqC_s8EWMXYbWsh3l6CZJ-H43s1Cmqdbu75P25pZEWLcr6nyOjNZN3QHUKYJIM2xByXVBxqxFcBMLc8kQayE5ou1INI-7lhZTVNhb1DqcM5_cbTWqUlWUS3b-colDXPTjRFHI6FytjF0hYpZdGS88LKIlRv9Cd-79ptzkuSEKqdamlvLK8Qd_MV7plQHA_LIvB_8hEVmkvzsQ27MCZ6MGI3pOShN_0B73JSl1HZwsd5CajSux8TUKI4zcA");'
-                  ></div>
-                  <div class="flex-1">
-                    <p class="text-white text-base font-medium leading-normal">Ethan Walker</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">2 weeks ago</p>
-                  </div>
-                </div>
-                <div class="flex gap-0.5">
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-2S3.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <p class="text-white text-base font-normal leading-normal">"The best grill in town! The food is amazing, and the atmosphere is electric."</p>
-                <div class="flex gap-9 text-[#adadad]">
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
-                        ></path>
-                      </svg>
+            <section class="w-full px-4 py-8">
+              <div class="flex flex-col md:flex-row gap-8">
+                <!-- Reseñas -->
+                <div class="flex flex-col gap-6 md:w-1/2 order-1">
+                  <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Social Media Reviews</h2>
+                  <div class="flex flex-col gap-8 overflow-x-hidden bg-[#1a1a1a] p-4">
+                    <div class="flex flex-col gap-3 bg-[#1a1a1a]">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0qw6WibMsu16Odt3zPHqC_s8EWMXYbWsh3l6CZJ-H43s1Cmqdbu75P25pZEWLcr6nyOjNZN3QHUKYJIM2xByXVBxqxFcBMLc8kQayE5ou1INI-7lhZTVNhb1DqcM5_cbTWqUlWUS3b-colDXPTjRFHI6FytjF0hYpZdGS88LKIlRv9Cd-79ptzkuSEKqdamlvLK8Qd_MV7plQHA_LIvB_8hEVmkvzsQ27MCZ6MGI3pOShN_0B73JSl1HZwsd5CajSux8TUKI4zcA");'
+                        ></div>
+                        <div class="flex-1">
+                          <p class="text-white text-base font-medium leading-normal">Ethan Walker</p>
+                          <p class="text-[#adadad] text-sm font-normal leading-normal">2 weeks ago</p>
+                        </div>
+                      </div>
+                      <div class="flex gap-0.5">
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-2S3.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-white text-base font-normal leading-normal">"The best grill in town! The food is amazing, and the atmosphere is electric."</p>
+                      <div class="flex gap-9 text-[#adadad]">
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">12</p>
+                        </button>
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">2</p>
+                        </button>
+                      </div>
                     </div>
-                    <p class="text-inherit">12</p>
-                  </button>
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
-                        ></path>
-                      </svg>
+                    <div class="flex flex-col gap-3 bg-[#1a1a1a]">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDb0zGz5A88ngqL3OP7YGA6UosDqUciym3NVri0N9ib2qMiK6lsqDDificyu_PcmAmMB-elYtkbJZXNio05p5a--ckPWAv2eEHC5n83NY_GrYqNU06aH-l88BXv0l9iczF-tEBp_vu0favyfCFMyVQtSPKRuioV5fzRp_B_K_AoqUo0bpfex6YFY4naa3EJh-W58th36P_a-7T66nuVm_kEWfqJ8uGaDfSNvpGMFqT-h9Y9JUw_Q2JVQOGk6ub1RqH8WKCNnaXUWAQ");'
+                        ></div>
+                        <div class="flex-1">
+                          <p class="text-white text-base font-medium leading-normal">Olivia Hayes</p>
+                          <p class="text-[#adadad] text-sm font-normal leading-normal">1 month ago</p>
+                        </div>
+                      </div>
+                      <div class="flex gap-0.5">
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-[#696969]" data-icon="Star" data-size="20px" data-weight="regular">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-white text-base font-normal leading-normal">"Great food and service, but it can get quite crowded. Still worth the wait!"</p>
+                      <div class="flex gap-9 text-[#adadad]">
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">8</p>
+                        </button>
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">1</p>
+                        </button>
+                      </div>
                     </div>
-                    <p class="text-inherit">2</p>
-                  </button>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 bg-[#1a1a1a]">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDb0zGz5A88ngqL3OP7YGA6UosDqUciym3NVri0N9ib2qMiK6lsqDDificyu_PcmAmMB-elYtkbJZXNio05p5a--ckPWAv2eEHC5n83NY_GrYqNU06aH-l88BXv0l9iczF-tEBp_vu0favyfCFMyVQtSPKRuioV5fzRp_B_K_AoqUo0bpfex6YFY4naa3EJh-W58th36P_a-7T66nuVm_kEWfqJ8uGaDfSNvpGMFqT-h9Y9JUw_Q2JVQOGk6ub1RqH8WKCNnaXUWAQ");'
-                  ></div>
-                  <div class="flex-1">
-                    <p class="text-white text-base font-medium leading-normal">Olivia Hayes</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">1 month ago</p>
-                  </div>
-                </div>
-                <div class="flex gap-0.5">
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-[#696969]" data-icon="Star" data-size="20px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <p class="text-white text-base font-normal leading-normal">"Great food and service, but it can get quite crowded. Still worth the wait!"</p>
-                <div class="flex gap-9 text-[#adadad]">
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
-                        ></path>
-                      </svg>
+                    <div class="flex flex-col gap-3 bg-[#1a1a1a]">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSqO5ZZCkrN3AQYXBKWM4-T8ZjTHpuw4eGE_OdLAvrE6VVtLM7NZih4-X4sZtONatDc04YHiJ6VvuY0qVD41cXXGT4E_EAKILqMTlRI6G1Wa5OmrUuGygLj9m64zqMGZ6NCoMV5P4l7OeaSqLAg7rR067dk8H4UlaMJl7MnVT0r6h6EJ32Zd-9LSg5lpCJ2COaEg23rKvtxRSXdB_Nrbr95pWr9MTNeYg92iCrScBkma6dHoNE3wWOJK1P-yqqTx1fusNos0DeUn4");'
+                        ></div>
+                        <div class="flex-1">
+                          <p class="text-white text-base font-medium leading-normal">Noah Bennett</p>
+                          <p class="text-[#adadad] text-sm font-normal leading-normal">2 months ago</p>
+                        </div>
+                      </div>
+                      <div class="flex gap-0.5">
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                            <path
+                              d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <p class="text-white text-base font-normal leading-normal">"Absolutely love this place! The flavors are incredible, and the staff is super friendly."</p>
+                      <div class="flex gap-9 text-[#adadad]">
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">15</p>
+                        </button>
+                        <button class="flex items-center gap-2">
+                          <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                              <path
+                                d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
+                              ></path>
+                            </svg>
+                          </div>
+                          <p class="text-inherit">3</p>
+                        </button>
+                      </div>
                     </div>
-                    <p class="text-inherit">8</p>
-                  </button>
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-inherit">1</p>
-                  </button>
+                  </div>
+
+                  <!-- About Us -->
+                  <div class="flex flex-col gap-4 md:w-1/2 order-2">
+                    <img src="ruta-de-tu-imagen.png" alt="About us image" class="w-full h-52 object-cover rounded-lg shadow-md" />
+                    <h2 class="text-white text-[22px] font-bold">About Us</h2>
+                    <p class="text-white text-base font-normal leading-relaxed">
+                    Rukito is a modern urban grill restaurant that brings the taste of the city to your plate...
+                    </p>
+                  </div>
+
                 </div>
-              </div>
-              <div class="flex flex-col gap-3 bg-[#1a1a1a]">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSqO5ZZCkrN3AQYXBKWM4-T8ZjTHpuw4eGE_OdLAvrE6VVtLM7NZih4-X4sZtONatDc04YHiJ6VvuY0qVD41cXXGT4E_EAKILqMTlRI6G1Wa5OmrUuGygLj9m64zqMGZ6NCoMV5P4l7OeaSqLAg7rR067dk8H4UlaMJl7MnVT0r6h6EJ32Zd-9LSg5lpCJ2COaEg23rKvtxRSXdB_Nrbr95pWr9MTNeYg92iCrScBkma6dHoNE3wWOJK1P-yqqTx1fusNos0DeUn4");'
-                  ></div>
-                  <div class="flex-1">
-                    <p class="text-white text-base font-medium leading-normal">Noah Bennett</p>
-                    <p class="text-[#adadad] text-sm font-normal leading-normal">2 months ago</p>
-                  </div>
-                </div>
-                <div class="flex gap-0.5">
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <p class="text-white text-base font-normal leading-normal">"Absolutely love this place! The flavors are incredible, and the staff is super friendly."</p>
-                <div class="flex gap-9 text-[#adadad]">
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-inherit">15</p>
-                  </button>
-                  <button class="flex items-center gap-2">
-                    <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-inherit">3</p>
-                  </button>
-                </div>
-              </div>
-            </div>
+
+            </section>
+            
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Us</h2>
             <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
               Rukito is a modern urban grill restaurant that brings the taste of the city to your plate. We are passionate about creating delicious food with fresh ingredients and
@@ -451,6 +498,7 @@
             </p>
           </div>
         </div>
+
         <footer class="flex justify-center">
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
@@ -494,6 +542,7 @@
       </div>
     </div>
   </body>
+  <script type="module" src="src/js/file01.js"></script>
   <script src="src/js/toggle.js"></script>
   <style>
     .scrollbar-hide::-webkit-scrollbar {
