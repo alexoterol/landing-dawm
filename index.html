@@ -41,47 +41,26 @@
     </section>
 
     <main class="w-full max-w-6xl mx-auto px-4 py-12">
-      <section aria-labelledby="tiktok-title" class="mb-12">
-        <h2 id="tiktok-title" class="text-3xl font-extrabold mb-4 text-[#FF4E00]">Lo Último en TikTok</h2>
-
-        <nav class="flex gap-6 border-b border-[#FF4E00] mb-6">
-          <button class="pb-2 text-white font-semibold border-b-2 border-[#FF4E00]">Promociones</button>
-          <button class="pb-2 text-gray-400 hover:text-white transition">Menú</button>
-          <button class="pb-2 text-gray-400 hover:text-white transition">Videos Presencia</button>
-        </nav>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-pulse">
-          <div class="bg-[#2c2c2c] p-4 rounded-xl space-y-4">
-            <div class="w-full h-40 bg-[#FF4E00]/40 rounded-lg"></div>
-            <div class="h-6 bg-[#FF4E00]/30 rounded w-3/4"></div>
-            <div class="h-5 bg-[#FF4E00]/30 rounded w-1/2"></div>
-            <div class="space-y-2">
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-full"></div>
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-5/6"></div>
-            </div>
+      <!-- Toast container -->
+      <div id="toast-backdrop" class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 hidden flex items-center justify-center">
+        <div id="toast" class="bg-[#2c2c2c] text-white rounded-md shadow-lg flex flex-col md:flex-row max-w-6xl w-5/6 mx-auto h-[80vh]">
+          <div class="md:w-1/2">
+            <img id="toast-image" src="src/img/promo-example.png" alt="Promotion" class="w-full h-full object-cover rounded-tl-md rounded-bl-md md:rounded-bl-none md:rounded-tl-md">
           </div>
-          <div class="bg-[#2c2c2c] p-4 rounded-xl space-y-4">
-            <div class="w-full h-40 bg-[#FF4E00]/40 rounded-lg"></div>
-            <div class="h-6 bg-[#FF4E00]/30 rounded w-3/4"></div>
-            <div class="h-5 bg-[#FF4E00]/30 rounded w-1/2"></div>
-            <div class="space-y-2">
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-full"></div>
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-5/6"></div>
+          <div class="p-8 md:w-1/2 flex flex-col">
+            <div id="toast-limited-time" class="bg-[#FF4E00]/80 text-white text-xs py-1 px-2 rounded-md flex items-center gap-1 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Tiempo Limitado</span>
             </div>
-          </div>
-          <div class="bg-[#2c2c2c] p-4 rounded-xl space-y-4">
-            <div class="w-full h-40 bg-[#FF4E00]/40 rounded-lg"></div>
-            <div class="h-6 bg-[#FF4E00]/30 rounded w-3/4"></div>
-            <div class="h-5 bg-[#FF4E00]/30 rounded w-1/2"></div>
-            <div class="space-y-2">
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-full"></div>
-              <div class="h-3 bg-[#FF4E00]/20 rounded w-5/6"></div>
-            </div>
+            <h3 id="toast-title" class="text-2xl font-bold mb-4">Promotion Title</h3>
+            <p id="toast-details" class="text-lg text-gray-300 mb-6">Promotion details go here.</p>
+            <button id="close-toast" class="bg-[#FF4E00] text-white font-bold py-2 rounded-full text-sm hover:bg-white hover:text-[#1a1a1a] transition mt-auto self-start px-4">Cerrar</button>
           </div>
         </div>
-        
-      </section>
-      
+      </div>
+
       <section id="ubicaciones" class="w-full overflow-hidden w-full mt-16">
         <h2 class="text-3xl font-extrabold text-[#FF4E00] px-4 mb-6">Ubicaciones</h2>
 
@@ -289,10 +268,10 @@
                       ></path>
                     </svg>
                   </div>
-                  <div class="text-[#696969]" data-icon="Star" data-size="20px" data-weight="regular">
+                  <div class="text-white" data-icon="Star" data-size="20px" data-weight="fill">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"
+                        d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
                       ></path>
                     </svg>
                   </div>
@@ -419,7 +398,7 @@
               <div class="text-[#adadad]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path
-                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80a40,40,0,0,1,40-40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
                   ></path>
                 </svg>
               </div>

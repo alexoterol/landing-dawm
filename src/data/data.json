@@ -1,0 +1,40 @@
+{
+  "carouselItems": [
+    {
+      "image": "src/img/promo-example.png",
+      "title": "¡2x1 en Burgers!",
+      "description": "Disfruta de nuestras deliciosas burgers al 2x1 todos los martes.",
+      "link": "#"
+    },
+    {
+      "image": "src/img/promo-example2.png",
+      "title": "¡Papas + Gaseosa GRATIS!",
+      "description": "Por la compra de cualquier plato, recibe papas y gaseosa gratis.",
+      "link": "#"
+    },
+    {
+      "image": "src/img/promo-example3.png",
+      "title": "¡Combo Familiar!",
+      "description": "Disfruta en familia con nuestro combo especial a un precio increíble.",
+      "link": "#"
+    },
+    {
+      "image": "src/img/promo-example.png",
+      "title": "¡2x1 en Burgers!",
+      "description": "Disfruta de nuestras deliciosas burgers al 2x1 todos los martes.",
+      "link": "#"
+    },
+    {
+      "image": "src/img/promo-example2.png",
+      "title": "¡Papas + Gaseosa GRATIS!",
+      "description": "Por la compra de cualquier plato, recibe papas y gaseosa gratis.",
+      "link": "#"
+    },
+    {
+      "image": "src/img/promo-example3.png",
+      "title": "¡Combo Familiar!",
+      "description": "Disfruta en familia con nuestro combo especial a un precio increíble.",
+      "link": "#"
+    }
+  ]
+}
