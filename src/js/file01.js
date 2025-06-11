@@ -77,12 +77,14 @@ document.addEventListener('DOMContentLoaded', function () {
         <h3 class="text-lg font-bold text-white">${item.title}</h3>
         <p class="text-sm text-gray-300">${item.description}</p>
         <a href="${item.link}" class="inline-block bg-[#FF4E00] text-white font-bold px-4 py-2 rounded-full text-sm hover:bg-white hover:text-[#1a1a1a] transition mt-2">Ver más</a>
+		${item.limited ? `
         <div class="absolute top-2 right-2 bg-[#FF4E00]/80 text-white text-xs py-1 px-2 rounded-md flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <span>Tiempo Limitado</span>
         </div>
+		` : ''}
       `;
 
       carousel.appendChild(slide);
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const promoDetails = this.parentNode.querySelector('p').textContent;
 
         // Show the toast with fake information
-        showToast(promoTitle, promoImage, promoDetails);
+        showToast(promoTitle, promoImage, promoDetails, carouselItems);
       });
     });
 
@@ -122,31 +124,127 @@ document.addEventListener('DOMContentLoaded', function () {
     carouselSection.querySelector('.relative').appendChild(carousel);
 
     const main = document.querySelector('main');
-    main.appendChild(carouselSection);
+    const ubicacionesSection = document.getElementById('ubicaciones');
+    main.insertBefore(carouselSection, ubicacionesSection);
   }
 
   // Function to show the toast
-  function showToast(promoTitle, promoImage, promoDetails) {
+  function showToast(promoTitle, promoImage, promoDetails, carouselItems) {
     const toastBackdrop = document.getElementById('toast-backdrop');
     const toast = document.getElementById('toast');
     const toastTitle = document.getElementById('toast-title');
     const toastDetails = document.getElementById('toast-details');
     const closeToastButton = document.getElementById('close-toast');
     const limitedTimeBadge = document.getElementById('toast-limited-time');
+    const toastImageContainer = toast.querySelector('.md\\:w-1\\/2');
 
     toastTitle.textContent = promoTitle;
     toastDetails.textContent = promoDetails;
 
+    // Create carousel container
+    const carouselContainer = document.createElement('div');
+    carouselContainer.classList.add('relative', 'w-full', 'h-full', 'py-2', 'px-4'); // Added vertical and horizontal padding
+
+    // Create carousel
+    const fakeCarousel = document.createElement('div');
+    fakeCarousel.id = 'fake-carousel';
+    fakeCarousel.classList.add('w-full', 'h-full', 'flex', 'overflow-x-auto', 'snap-x', 'scroll-smooth', 'scrollbar-hide', 'relative'); // Make relative for absolute positioning
+
+    // Add images to carousel
+    const images = carouselItems.find(item => item.title === promoTitle).toastImages;
+    let currentImageIndex = 0; // Initialize currentImageIndex
+
+    images.forEach(imageSrc => {
+      let element;
+      if (imageSrc.endsWith('.mp4')) {
+        element = document.createElement('video');
+        element.src = imageSrc;
+        element.autoplay = true;
+        element.loop = true;
+        element.muted = false; // Enable sound
+		element.controls = true; // Add video controls
+		element.style.objectFit = 'contain'; // Ensure video fits the screen
+      } else {
+        element = document.createElement('img');
+        element.src = imageSrc;
+      }
+      element.alt = 'Promotion';
+      element.classList.add('min-w-full', 'h-full', 'object-cover', 'rounded-md', 'snap-start'); // Reduced rounded corners
+      fakeCarousel.appendChild(element);
+    });
+
+    // Create indicators
+    const indicatorsContainer = document.createElement('div');
+    indicatorsContainer.classList.add('flex', 'justify-center', 'gap-2', 'absolute', 'bottom-2', 'left-0', 'right-0'); // Position indicators inside carousel
+
+    for (let i = 0; i < images.length; i++) {
+      const indicator = document.createElement('button');
+      indicator.classList.add('w-2', 'h-2', 'rounded-full', 'carousel-indicator');
+      indicator.setAttribute('aria-current', i === currentImageIndex);
+      indicator.style.backgroundColor = i === currentImageIndex ? '#FF4E00' : '#gray-400';
+      indicatorsContainer.appendChild(indicator);
+    }
+
+    const updateIndicators = () => {
+      const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+      indicators.forEach((indicator, index) => {
+        indicator.style.backgroundColor = index === currentImageIndex ? '#FF4E00' : '#gray-400';
+        indicator.setAttribute('aria-current', index === currentImageIndex);
+      });
+    };
+
+    // Create navigation buttons
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = '<span> &lt; </span>';
+    prevButton.classList.add('absolute', 'left-2', 'top-1/2', 'transform', '-translate-y-1/2', 'z-10', 'bg-black/50', 'text-white', 'p-2', 'rounded-full'); // Position inside carousel
+    prevButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      fakeCarousel.scrollLeft = fakeCarousel.offsetWidth * currentImageIndex;
+      updateIndicators();
+    });
+
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = '<span> &gt; </span>';
+    nextButton.classList.add('absolute', 'right-2', 'top-1/2', 'transform', '-translate-y-1/2', 'z-10', 'bg-black/50', 'text-white', 'p-2', 'rounded-full'); // Position inside carousel
+    nextButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      fakeCarousel.scrollLeft = fakeCarousel.offsetWidth * currentImageIndex;
+      updateIndicators();
+    });
+
+    // Append elements
+    carouselContainer.appendChild(fakeCarousel);
+    carouselContainer.appendChild(indicatorsContainer);
+    carouselContainer.appendChild(prevButton);
+    carouselContainer.appendChild(nextButton);
+
+    // Replace image with carousel
+    toastImageContainer.innerHTML = '';
+    toastImageContainer.appendChild(carouselContainer);
+
+    const isLimited = carouselItems.find(item => item.title === promoTitle).limited;
+    if (isLimited) {
+      limitedTimeBadge.classList.remove('hidden');
+    } else {
+      limitedTimeBadge.classList.add('hidden');
+    }
+
     toastBackdrop.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
-
-    limitedTimeBadge.classList.remove('hidden');
 
     closeToastButton.addEventListener('click', function () {
       toastBackdrop.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
       limitedTimeBadge.classList.add('hidden');
+
+	  // Pause the video when the toast is closed
+	  const video = fakeCarousel.querySelector('video');
+	  if (video) {
+		video.pause();
+	  }
     });
+
+    console.log('showToast called', promoTitle, promoImage, promoDetails); // Add console log
   }
 
   renderCarouselItems();
