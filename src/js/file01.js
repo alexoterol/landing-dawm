@@ -1,6 +1,7 @@
 "use strict";
 
 import { fetchFakerData } from './functions.js';
+import { saveVote, getVotes } from './firebase.js';
 
 // (() => {
 //     alert("¡Bienvenido a la página!");
@@ -261,9 +262,125 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCarouselItems();
 });
 
+// Definir la función enableForm
+function enableForm() {
+  // Seleccionar el formulario con id 'form_voting'
+  const form = document.getElementById('form_voting');
+  
+  // Agregar el listener para el evento 'submit'
+  form.addEventListener('submit', function(event) {
+    // Prevenir el comportamiento por defecto del formulario
+    event.preventDefault();
+
+    // Obtener el valor del campo 'select_product'
+    const productID = document.getElementById('select_product').value;
+
+    // Llamar a la función saveVote con el valor del campo 'select_product'
+    saveVote(productID)
+      .then(response => {
+        // Mostrar el mensaje de éxito
+        alert(response.message);
+      })
+      .catch(error => {
+        // Mostrar el mensaje de error
+        alert(error.message);
+      });
+
+    // Limpiar el formulario después de enviarlo
+    form.reset();
+  });
+}
+function displayVotes() {
+  // Obtener los votos utilizando la función getVotes
+  getVotes()
+    .then((votesData) => {
+      // Si no hay votos, mostrar un mensaje
+      if (votesData.message) {
+        document.getElementById('results').innerHTML = `<p class="text-gray-500 text-center mt-16">${votesData.message}</p>`;
+        return;
+      }
+
+      // Contar los votos por producto
+      const productVotes = {
+        product1: 0,
+        product2: 0,
+        product3: 0,
+      };
+
+      // Iterar sobre los votos y contar cuántos votos tiene cada producto
+      for (const key in votesData) {
+        const vote = votesData[key];
+        const productID = vote.productID;
+        
+        if (productVotes[productID] !== undefined) {
+          productVotes[productID]++;
+        }
+      }
+
+      // Crear la tabla HTML
+      let tableHtml = `
+        <table class="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr>
+              <th class="py-2 px-4 border-b text-left text-black">Producto</th>
+              <th class="py-2 px-4 border-b text-left text-black">Votos</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      // Añadir una fila por cada producto con su número de votos
+      for (const product in productVotes) {
+        tableHtml += `
+          <tr>
+            <td class="py-2 px-4 border-b text-black">${product}</td>
+            <td class="py-2 px-4 border-b text-black">${productVotes[product]}</td>
+          </tr>
+        `;
+      }
+
+      // Cerrar la tabla HTML
+      tableHtml += `</tbody></table>`;
+
+      // Insertar la tabla en el elemento con id="results"
+      document.getElementById('results').innerHTML = tableHtml;
+    })
+    .catch((error) => {
+      // Si ocurre un error, mostrar el mensaje de error
+      document.getElementById('results').innerHTML = `<p class="text-red-500 text-center mt-16 text-black">${error.message}</p>`;
+    });
+}
+
+// Función autoejecutable para inicializar la página y gestionar los votos
+(function enableForm() {
+  const form = document.getElementById('form_voting');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+    const selectedProduct = document.getElementById('select_product').value;
+
+    // Llamar a la función saveVote pasando el valor del producto seleccionado
+    saveVote(selectedProduct)
+      .then((result) => {
+        console.log(result.message); // Mostrar mensaje de éxito
+
+        // Después de guardar el voto, actualizar la tabla de resultados
+        displayVotes();
+        
+        // Limpiar el formulario
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error.message); // Mostrar mensaje de error
+      });
+  });
+})();
+
 (() => {
     showToast();
     showVideo();
     loadData();
+    enableForm();
+    displayVotes();
 })();
 
