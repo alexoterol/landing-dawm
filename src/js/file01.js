@@ -123,6 +123,17 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     carouselSection.querySelector('.relative').appendChild(carousel);
 
+    const prevSlideTikTok = carouselSection.querySelector('#prevSlideTikTok');
+    const nextSlideTikTok = carouselSection.querySelector('#nextSlideTikTok');
+
+    prevSlideTikTok.addEventListener('click', () => {
+      carousel.scrollLeft -= carousel.offsetWidth;
+    });
+
+    nextSlideTikTok.addEventListener('click', () => {
+      carousel.scrollLeft += carousel.offsetWidth;
+    });
+
     const main = document.querySelector('main');
     const ubicacionesSection = document.getElementById('ubicaciones');
     main.insertBefore(carouselSection, ubicacionesSection);
