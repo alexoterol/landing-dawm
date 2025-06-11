@@ -1,0 +1,19 @@
+<section aria-labelledby="tiktok-title" class="mb-12">
+  <h2 id="tiktok-title" class="text-3xl font-extrabold mb-4 text-[#FF4E00]">Lo Último en TikTok</h2>
+
+  <nav class="flex gap-6 border-b border-[#FF4E00] mb-6">
+    <button class="pb-2 text-white font-semibold border-b-2 border-[#FF4E00]">Promociones</button>
+    <button class="pb-2 text-gray-400 hover:text-white transition">Menú</button>
+    <button class="pb-2 text-gray-400 hover:text-white transition">Videos Presencia</button>
+  </nav>
+
+  <div class="relative">
+    <!-- Flechas carrusel -->
+    <button id="prevSlideTikTok" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"><span> &lt; </span></button>
+    <button id="nextSlideTikTok" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"><span> &gt; </span></button>
+
+    <!-- Carrusel -->
+    <div id="tiktokCarousel" class="flex overflow-x-auto snap-x scroll-smooth scrollbar-hide gap-6 px-4">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+{
+  "carouselItems": [
+    {
+      "image": "src/img/promo6.png",
+      "title": "Promoción San Luis Costillas 2x$24.5",
+      "description": "Promoción única por tiempo limitado San Luis Costillas 2x$24.5.",
+      "link": "#",
+      "limited": true,
+      "toastImages": [
+        "src/video/promo6.mp4",
+        "src/img/promo-example3.png",
+        "src/img/promo-example.png",
+        "src/video/promo-video.mp4"
+      ]
+    },
+    {
+      "image": "src/img/promo1.png",
+      "title": "Promociones de la Semana",
+      "description": "Descubre nuestras increíbles promociones semanales.",
+      "link": "#",
+      "toastImages": [
+        "src/video/promo1.mp4",
+        "src/img/promo.mp4",
+        "src/img/promo-example3.png",
+        "src/img/promo-example.png"
+      ]
+    },
+    {
+      "image": "src/img/promo2.png",
+      "title": "Lunes 2x$12.5",
+      "description": "Disfruta los lunes de 2x1 a $12.5.",
+      "link": "#",
+      "toastImages": [
+        "src/video/promo2.mp4",
+        "src/img/promo-example3.png",
+        "src/img/promo-example.png"
+      ]
+    },
+    {
+      "image": "src/img/promo3.png",
+      "title": "Arroz Dos Pollos",
+      "description": "Delicioso arroz con dos pollos a un precio especial.",
+      "link": "#",
+      "toastImages": [
+        "src/video/promo3.mp4",
+        "src/img/promo-example3.png",
+        "src/video/promo-video.mp4",
+        "src/img/promo-example2.png"
+      ]
+    },
+    {
+      "image": "src/img/promo4.png",
+      "title": "Miércoles de Costillas Baby Back",
+      "description": "Los miércoles disfruta de nuestras costillas Baby Back.",
+      "link": "#",
+      "toastImages": [
+        "src/video/promo4.mp4",
+        "src/img/promo-example.png",
+        "src/video/promo-video.mp4",
+        "src/img/promo-example3.png"
+      ]
+    },
+    {
+      "image": "src/img/promo5.png",
+      "title": "Domingo 2x1 en Cocteles",
+      "description": "Los domingos 2x1 en todos los cocteles.",
+      "link": "#",
+      "toastImages": [
+        "src/video/promo5.mp4",
+        "src/img/promo-example2.png",
+        "src/img/promo-example3.png",
+        "src/video/promo-video.mp4"
+      ]
+    }
+  ]
+}
