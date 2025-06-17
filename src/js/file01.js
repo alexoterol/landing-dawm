@@ -311,6 +311,83 @@ function enableForm() {
 }
 
 
+const ubicaciones = [
+  {
+    id: 1,
+    nombre: "Local Urdesa",
+    direccion: "Av. Victor Emilio Estrada, frente al banco Pichincha",
+    referencia: "Diagonal al parque central",
+    telefono: "0991234567",
+    mapaSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.399539694581!2d-79.91864631569501!3d-2.161754674829706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6d3860181f0f%3A0x54caebdd9158fce!2sRukito%20Grill%26Drinks%20-%20Urdesa!5e0!3m2!1ses-419!2sec!4v1750181058151!5m2!1ses-419!2sec",
+    imagenCrowd: "src/img/crowd-meter-example.png"
+  },
+  {
+    id: 2,
+    nombre: "Aventura Plaza",
+    direccion: "Av. Carlos Julio Arosemena",
+    referencia: "Frente a la plaza, diagonal a Kitton",
+    telefono: "0987654321",
+    mapaSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.4691752611743!2d-79.91684007571484!3d-2.1734312597827414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6d734c9aa1dd%3A0xb554e8239fb6a1e3!2sRukito%20Grill%26Drinks%20-%20Aventura%20Plaza!5e0!3m2!1ses-419!2sec!4v1750180999123!5m2!1ses-419!2sec",
+    imagenCrowd: "src/img/crowd-meter-example.png"
+  },
+  {
+    id: 3,
+    nombre: "Alborada",
+    direccion: "Av. Rodolfo Vaquerizo",
+    referencia: "Frente a Parque Pescador",
+    telefono: "0987654321",
+    mapaSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10588.38364966979!2d-79.91204497454093!3d-2.1368283696606256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6df1a996d4db%3A0xbdce0622e280c56b!2sRukito%20Grill%26Drink%20-%20Alborada!5e0!3m2!1ses-419!2sec!4v1750181127395!5m2!1ses-419!2sec",
+    imagenCrowd: "src/img/crowd-meter-example.png"
+  }
+];
+
+const carousel = document.getElementById("carousel");
+
+ubicaciones.forEach((ubicacion) => {
+  const slide = document.createElement("div");
+  slide.className =
+    "min-w-full md:min-w-[90%] snap-center flex flex-col md:flex-row bg-[#1a1a1a] rounded-xl shadow-lg p-4 gap-6 mx-auto max-w-5xl relative";
+
+  slide.innerHTML = `
+    <div class="relative w-full md:w-1/2">
+      <iframe id="mapa-${ubicacion.id}" class="rounded-xl w-full object-cover" src="${ubicacion.mapaSrc}" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <img id="crowdmeter-${ubicacion.id}" src="${ubicacion.imagenCrowd}" class="rounded-xl h-full object-cover hidden absolute top-0 left-0 w-full h-full" alt="Crowdmeter" />
+      <!-- Toggle minimalista -->
+      <div class="absolute right-2 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-2">
+        <button onclick="toggleVista(${ubicacion.id})" id="dot-${ubicacion.id}" class="w-5 h-5 rounded-full bg-white opacity-40 transition shadow-lg shadow-black/70 opacity-60 hover:opacity-100"></button>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center gap-3 text-white md:w-1/2">
+      <p class="text-lg font-bold">${ubicacion.nombre}</p>
+      <p class="text-sm text-[#adadad]">${ubicacion.direccion}</p>
+      <p class="text-xs italic text-[#8a8a8a]">${ubicacion.referencia}</p>
+      <div class="flex items-center gap-2 pt-2">
+        <button class="flex items-center gap-1 px-3 py-1 border border-white text-white font-bold rounded hover:bg-white hover:text-black transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l.4 2M7 13l1.5 1.5L13 10l1.5 1.5M16 17h2a2 2 0 002-2v-5a2 2 0 00-2-2h-2.586a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 0010.586 5H7a2 2 0 00-2 2v10a2 2 0 002 2h9z" />
+          </svg>
+          Contacto
+        </button>
+        <span class="text-sm text-[#adadad]">${ubicacion.telefono}</span>
+      </div>
+    </div>
+  `;
+
+  carousel.appendChild(slide);
+});
+
+function toggleVista(id) {
+  const mapa = document.getElementById(`mapa-${id}`);
+  const crowd = document.getElementById(`crowdmeter-${id}`);
+  const dot = document.getElementById(`dot-${id}`);
+
+  const isMapVisible = !mapa.classList.contains("hidden");
+  mapa.classList.toggle("hidden", isMapVisible);
+  crowd.classList.toggle("hidden", !isMapVisible);
+  dot.classList.toggle("opacity-100", !isMapVisible);
+  dot.classList.toggle("opacity-40", isMapVisible);
+}
+
 
 (() => {
     showToast();
