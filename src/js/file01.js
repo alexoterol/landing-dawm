@@ -1,6 +1,8 @@
 "use strict";
 
 import { fetchFakerData } from './functions.js';
+import { guardarComentario, saveComment } from './firebase.js';
+
 
 // (() => {
 //     alert("¡Bienvenido a la página!");
@@ -34,19 +36,25 @@ const showVideo = () => {
     }
 };
 
+
 const loadData = async () => {
-    const url = 'https://fakerapi.it/api/v2/texts?_quantity=1&_characters=180';
-    try {
-        const result = await fetchFakerData(url);
-        if (result.success) {
-            console.log('Datos obtenidos con éxito:', result.body);
-        } else {
-            console.error('Error al obtener los datos:', result.error);
-        }
-    } catch (error) {
-        console.error('Ocurrió un error inesperado:', error);
+  const url = 'https://fakerapi.it/api/v2/books?_quantity=1';
+  try {
+    const result = await fetchFakerData(url);
+    if (result.success) {
+      const libro = result.body.data[0];
+      document.getElementById('nombre').value = libro.author;
+      document.getElementById('mensaje').value = libro.description;
+    } else {
+      console.error('Error al obtener los datos:', result.error);
     }
+  } catch (error) {
+    console.error('Ocurrió un error inesperado:', error);
+  }
 };
+
+// Ejecutar cuando se haga clic en el botón
+document.getElementById('autocompletar').addEventListener('click', loadData);
 
 document.addEventListener('DOMContentLoaded', function () {
   // Function to fetch carousel data from JSON
@@ -261,9 +269,52 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCarouselItems();
 });
 
+function enableForm() {
+  const form = document.getElementById('formulario-rukito');
+  const popup = document.getElementById('respuesta-formulario');
+  const cerrarBtn = document.getElementById('cerrar-popup');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // ✅ Capturar valores ANTES de resetear
+    const nombre = document.getElementById('nombre').value.trim();
+    const tipo = document.getElementById('tipo').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    if (!nombre || !tipo || !mensaje) return;
+
+    const resultado = await guardarComentario({ nombre, tipo, mensaje });
+
+    if (resultado.ok) {
+      // ✅ Usar los valores guardados (ya no se leerán desde inputs)
+      document.getElementById('rta-nombre').textContent = nombre;
+      document.getElementById('rta-tipo').textContent = tipo;
+      document.getElementById('rta-mensaje').textContent = mensaje;
+
+      form.reset(); // 🔄 LUEGO de usarlos
+      popup.classList.remove('hidden');
+
+      setTimeout(() => {
+        popup.classList.add('hidden');
+      }, 5000);
+
+      form.reset();
+    } else {
+      alert('Hubo un error al enviar tu mensaje.');
+    }
+
+    cerrarBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
+    });
+  });
+}
+
+
+
 (() => {
     showToast();
     showVideo();
-    loadData();
+    enableForm();
 })();
 

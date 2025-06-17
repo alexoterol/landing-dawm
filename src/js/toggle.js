@@ -32,3 +32,8 @@ document.getElementById('nextSlide').addEventListener('click', () => {
     updateCarousel();
   }
 });
+
+const cerrarBtn = document.getElementById('cerrar-popup');
+cerrarBtn.addEventListener('click', () => {
+  document.getElementById('respuesta-formulario').classList.add('hidden');
+});
