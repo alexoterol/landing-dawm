@@ -1,4 +1,3 @@
-
 function toggleVista(id) {
   const mapa = document.getElementById(`mapa-${id}`);
   const crowd = document.getElementById(`crowdmeter-${id}`);
