@@ -377,6 +377,7 @@ ubicaciones.forEach((ubicacion) => {
 });
 
 
+
 (() => {
     showToast();
     showVideo();
