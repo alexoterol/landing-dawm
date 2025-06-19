@@ -3,6 +3,9 @@
 import { fetchFakerData } from './functions.js';
 import { guardarComentario, saveComment } from './firebase.js';
 
+
+
+
 // (() => {
 //     alert("¡Bienvenido a la página!");
 //     console.log("Mensaje de bienvenida mostrado.");
@@ -342,6 +345,17 @@ const ubicaciones = [
 
 const carousel = document.getElementById("carousel");
 
+function toggleVista(id) {
+  const mapa = document.getElementById(`mapa-${id}`);
+  const crowd = document.getElementById(`crowdmeter-${id}`);
+  const dot = document.getElementById(`dot-${id}`);
+
+  const isMapVisible = !mapa.classList.contains("hidden");
+  mapa.classList.toggle("hidden", isMapVisible);
+  crowd.classList.toggle("hidden", !isMapVisible);
+  dot.classList.toggle("opacity-100", !isMapVisible);
+  dot.classList.toggle("opacity-40", isMapVisible);
+}
 ubicaciones.forEach((ubicacion) => {
   const slide = document.createElement("div");
   slide.className =
@@ -351,9 +365,8 @@ ubicaciones.forEach((ubicacion) => {
     <div class="relative w-full md:w-1/2">
       <iframe id="mapa-${ubicacion.id}" class="rounded-xl w-full object-cover" src="${ubicacion.mapaSrc}" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       <img id="crowdmeter-${ubicacion.id}" src="${ubicacion.imagenCrowd}" class="rounded-xl h-full object-cover hidden absolute top-0 left-0 w-full h-full" alt="Crowdmeter" />
-      <!-- Toggle minimalista -->
       <div class="absolute right-2 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-2">
-        <button onclick="toggleVista(${ubicacion.id})" id="dot-${ubicacion.id}" class="w-5 h-5 rounded-full bg-white opacity-40 transition shadow-lg shadow-black/70 opacity-60 hover:opacity-100"></button>
+        <button id="dot-${ubicacion.id}" class="w-5 h-5 rounded-full bg-white opacity-40 transition shadow-lg shadow-black/70 opacity-60 hover:opacity-100"></button>
       </div>
     </div>
     <div class="flex flex-col justify-center gap-3 text-white md:w-1/2">
@@ -373,7 +386,12 @@ ubicaciones.forEach((ubicacion) => {
   `;
 
   carousel.appendChild(slide);
+
+  // Asignar evento click aquí:
+  const dotBtn = slide.querySelector(`#dot-${ubicacion.id}`);
+  dotBtn.addEventListener("click", () => toggleVista(ubicacion.id));
 });
+
 
 
 
