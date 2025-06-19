@@ -3,7 +3,6 @@
 import { fetchFakerData } from './functions.js';
 import { guardarComentario, saveComment } from './firebase.js';
 
-
 // (() => {
 //     alert("¡Bienvenido a la página!");
 //     console.log("Mensaje de bienvenida mostrado.");
