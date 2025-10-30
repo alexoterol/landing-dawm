@@ -11,7 +11,10 @@ const showVideo = () => {
     const demoButton = document.getElementById('demo');
     if (demoButton) {
         demoButton.addEventListener('click', () => {
-            window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+            const newWindow = window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+            if (newWindow) {
+                newWindow.opener = null;
+            }
         });
     }
 };
