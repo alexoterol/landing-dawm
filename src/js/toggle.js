@@ -1,4 +1,4 @@
-function toggleVista(id) {
+export function toggleVista(id) {
   const mapa = document.getElementById(`mapa-${id}`);
   const crowd = document.getElementById(`crowdmeter-${id}`);
   mapa.classList.toggle('hidden');
