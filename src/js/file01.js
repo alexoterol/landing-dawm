@@ -260,8 +260,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		video.pause();
 	  }
     });
-
-    console.log('showToast called', promoTitle, promoImage, promoDetails); // Add console log
   }
 
   renderCarouselItems();
