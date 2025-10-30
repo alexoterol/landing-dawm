@@ -188,6 +188,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Create indicators
+    const ACTIVE_COLOR = '#FF4E00';
+    const INACTIVE_COLOR = '#gray-400';
+
     const indicatorsContainer = document.createElement('div');
     indicatorsContainer.classList.add('flex', 'justify-center', 'gap-2', 'absolute', 'bottom-2', 'left-0', 'right-0'); // Position indicators inside carousel
 
@@ -195,14 +198,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const indicator = document.createElement('button');
       indicator.classList.add('w-2', 'h-2', 'rounded-full', 'carousel-indicator');
       indicator.setAttribute('aria-current', i === currentImageIndex);
-      indicator.style.backgroundColor = i === currentImageIndex ? '#FF4E00' : '#gray-400';
+      indicator.style.backgroundColor = i === currentImageIndex ? ACTIVE_COLOR : INACTIVE_COLOR;
       indicatorsContainer.appendChild(indicator);
     }
 
     const updateIndicators = () => {
       const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
       indicators.forEach((indicator, index) => {
-        indicator.style.backgroundColor = index === currentImageIndex ? '#FF4E00' : '#gray-400';
+        indicator.style.backgroundColor = index === currentImageIndex ? ACTIVE_COLOR : INACTIVE_COLOR;
         indicator.setAttribute('aria-current', index === currentImageIndex);
       });
     };
