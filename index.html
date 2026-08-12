@@ -1,202 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800"
     />
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Rukito Grill & Drinks</title>
+    <link rel="icon" type="image/jpeg" href="/img/rukito-logo.jpeg" />
+    <meta name="description" content="Rukito Grill & Drinks — parrilla, cócteles y ambiente electrizante. Ordena ya o reserva tu mesa." />
   </head>
-
-  <body class="bg-[#1a1a1a] text-white font-sans">
-    <header class="w-full border-b border-[#FF4E00] px-6 py-4 bg-[#1a1a1a] flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <img src="src/img/rukito-logo.jpeg" alt="Rukito Logo" class="w-10 h-10 rounded-full" />
-        <h1 class="text-white text-xl font-black tracking-tight">RUKITO</h1>
-      </div>
-      <nav class="flex items-center gap-6 text-sm">
-        <a href="#mainsec" class="text-white hover:text-[#FF4E00] transition font-medium">Menú</a>
-        <a href="#ubicaciones" class="text-white hover:text-[#FF4E00] transition font-medium">Ubicaciones</a>
-        <a href="#Reseñas" class="text-white hover:text-[#FF4E00] transition font-medium">Reseñas</a>
-        <a href="#Sobre-Nosotros" class="text-white hover:text-[#FF4E00] transition font-medium">Sobre Nosotros</a>
-        <a href="#contacto" class="text-white hover:text-[#FF4E00] transition font-medium">Contacto</a>
-        <a href="https://wa.me/593991234567" target="_blank" class="ml-4 bg-[#FF4E00] text-white font-bold px-4 py-2 rounded-full text-sm hover:bg-white hover:text-[#1a1a1a] transition">Ordenar</a>
-      </nav>
-    </header>
-
-    <section id="hero" class="relative w-full min-h-[90vh] flex items-center justify-center bg-cover bg-center px-6" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDY37u8TJvrZX9sBQS3MHuzTgbwR5b7XbiW6aDG5A6r16R8upjUB5VU3sGF5YRaH6uaPLO0RUKOKMAMqteyuB2jMY2gLmto_BCFNlmQWhuS6KzwzYPdhc84IIijk8FkDrT3Jul0tnLLks1f6RLYZHTk0UpCI2wQEjScz0mpayB4BOyVj7Q1wUdWpQvw-VWqu0B12esf5PE9KYlHEhehXSFY27WGVUo9va40RbUvB0y4AiLuV0tCUMnPWaZ2o9QFRz8P6xrcS7Z9us');">
-      <div class="text-center space-y-6 px-4 max-w-3xl">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">Rukito</h1>
-        <p class="text-lg md:text-xl text-gray-200">El sabor de la ciudad en cada bocado. ¡Ordena ya o mira nuestro TikTok!</p>
-        <div class="flex flex-wrap justify-center gap-4 pt-6">
-          <a href="https://wa.me/593991234567" target="_blank" class="bg-white text-[#1a1a1a] font-bold text-lg px-8 py-3 rounded-full hover:bg-[#FF4E00] hover:text-white transition">Ordenar en WhatsApp</a>
-          <a href="#" class="bg-[#FF4E00] text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-white hover:text-[#1a1a1a] transition">Ver TikTok</a>
-        </div>
-      </div>
-    </section>
-
-    <main class="w-full max-w-6xl mx-auto px-4 py-12" id="mainsec">
-      <!-- Toast container -->
-      <div id="toast-backdrop" class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 hidden flex items-center justify-center">
-        <div id="toast" class="bg-[#2c2c2c] text-white rounded-md shadow-lg flex flex-col md:flex-row max-w-6xl w-5/6 mx-auto h-[80vh]">
-          <div class="md:w-1/2">
-            <img id="toast-image" src="src/img/promo3.png" alt="Promotion" class="w-full h-full object-cover rounded-tl-md rounded-bl-md md:rounded-bl-none md:rounded-tl-md">
-          </div>
-          <div class="p-8 md:w-1/2 flex flex-col">
-            <div id="toast-limited-time" class="bg-[#FF4E00]/80 text-white text-xs py-1 px-2 rounded-md flex items-center gap-1 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Tiempo Limitado</span>
-            </div>
-            <h3 id="toast-title" class="text-2xl font-bold mb-4">Promotion Title</h3>
-            <p id="toast-details" class="text-lg text-gray-300 mb-6">Promotion details go here.</p>
-            <button id="close-toast" class="bg-[#FF4E00] text-white font-bold py-2 rounded-full text-sm hover:bg-white hover:text-[#1a1a1a] transition mt-auto self-start px-4">Cerrar</button>
-          </div>
-        </div>
-      </div>
-      
-      <section id="ubicaciones" class="w-full overflow-hidden mt-16">
-        <h2 class="text-3xl font-extrabold text-[#FF4E00] px-4 mb-6">Ubicaciones</h2>
-
-        <div class="relative h-auto md:h-[50vh] flex items-center">
-          <!-- Flechas carrusel -->
-          <button id="prevSlide" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"><span> &lt; </span></button>
-          <button id="nextSlide" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full"><span> &gt; </span></button>
-
-          <!-- Carrusel de ubicaciones -->
-          <div id="carousel" class="flex overflow-x-auto snap-x scroll-smooth scrollbar-hide w-full gap-6 px-4">
-            <!-- Renderizar ubicaciones con JS -->
-          </div>
-        </div>
-      </section>
-
-      <section class="w-full px-4 py-8" id="Reseñasa">
-        <div class="flex flex-col md:flex-row gap-8">
-          <section class="w-full px-4 py-8" id="Reseñas">
-            <h2 class="text-3xl font-extrabold text-[#FF4E00] px-4 mb-6">Social Media Reviews</h2>
-            <div id="contenedor-reseñas" class="space-y-6"></div>
-          </section>
-          
-          <!-- About Us -->
-          <aside class="flex flex-col gap-4 md:w-1/3 order-2" id="Sobre-Nosotros">
-            <h2 class="text-3xl font-extrabold text-[#FF4E00] px-4 mb-6">Sobre Nosotros</h2>
-            <img src="src/img/rukito-logo.jpeg" alt="Imagen de Rukito" class="w-full h-52 object-cover rounded-lg shadow-lg mb-4" />
-            <p class="text-white text-base leading-relaxed">
-              En Rukito, fusionamos el estilo urbano con una experiencia culinaria moderna. Nos apasiona ofrecer platos irresistibles preparados con ingredientes frescos, ideales para quienes buscan una experiencia rápida pero con personalidad. Ya sea que nos visites para un almuerzo casual, una salida con amigos o simplemente para disfrutar de un buen sabor, Rukito es tu lugar. Nos destacamos por nuestra presencia en redes sociales, promociones creativas y un ambiente relajado que refleja el ritmo de la ciudad.
-            </p>
-          </aside>
-        </div>
-      </section>
-
-      <section id="contacto" class="py-12 px-4 bg-[#1a1a1a] text-white">
-        <h2 class="text-3xl font-extrabold text-[#FF4E00] text-center mb-8">Contáctanos</h2>
-
-        <form id="formulario-rukito" class="max-w-xl mx-auto bg-[#2c2c2c] p-6 rounded-xl shadow-lg space-y-6">
-          <div>
-            <label for="nombre" class="block text-sm font-bold mb-2">Tu Nombre</label>
-            <input id="nombre" type="text" required placeholder="Ingresa tu nombre" class="w-full px-4 py-2 rounded bg-[#1a1a1a] text-white border border-[#FF4E00] focus:outline-none focus:ring-2 focus:ring-[#FF4E00]" />
-          </div>
-
-          <div>
-            <label for="tipo" class="block text-sm font-bold mb-2">Tipo de Consulta</label>
-            <select id="tipo" required class="w-full px-4 py-2 rounded bg-[#1a1a1a] text-white border border-[#FF4E00] focus:outline-none focus:ring-2 focus:ring-[#FF4E00]">
-              <option value="">Selecciona una opción</option>
-              <option value="pedido">Pedido</option>
-              <option value="reclamo">Reclamo</option>
-              <option value="sugerencia">Sugerencia</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="mensaje" class="block text-sm font-bold mb-2">Mensaje</label>
-            <textarea id="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..." class="w-full px-4 py-2 rounded bg-[#1a1a1a] text-white border border-[#FF4E00] focus:outline-none focus:ring-2 focus:ring-[#FF4E00]"></textarea>
-          </div>
-
-          <button type="submit" class="bg-[#FF4E00] text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-[#1a1a1a] transition">
-            Enviar
-          </button>
-          <button type="button" id="autocompletar" class="text-sm text-[#FF4E00] hover:underline mt-2">
-            Autocompletar con ejemplo
-          </button>
-
-        </form>
-
-        <!-- Popup de confirmación -->
-        <div id="respuesta-formulario" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center">
-          <div class="bg-[#1a1a1a] border border-[#FF4E00] p-6 rounded-xl max-w-md w-[90%] md:w-full text-white relative shadow-2xl">
-            <!-- Botón para cerrar -->
-            <button id="cerrar-popup" class="absolute top-2 right-3 text-[#FF4E00] text-2xl font-bold hover:text-white transition">✕</button>
-
-            <!-- Contenido del popup -->
-            <h3 class="text-xl font-bold mb-4 text-[#FF4E00] text-center">Tu mensaje ha sido enviado</h3>
-            <div class="space-y-2" id="pop-up-result">
-              <p><strong>Nombre:</strong> <span id="rta-nombre"></span></p>
-              <p><strong>Tipo:</strong> <span id="rta-tipo"></span></p>
-              <p><strong>Mensaje:</strong> <span id="rta-mensaje"></span></p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="flex justify-center">
-      <div class="flex max-w-[960px] flex-1 flex-col">
-        <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-          <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-            <a class="text-[#adadad] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
-            <a class="text-[#adadad] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
-          </div>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="https://www.instagram.com/rukito_gd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-              <div class="text-[#adadad]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80a40,40,0,0,1,40-40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-            <a href="https://www.tiktok.com/@rukito_gd?lang=es">
-              <div class="text-[#adadad]" data-icon="TiktokLogo" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-            <a href="https://x.com/rukito_grill">
-              <div class="text-[#adadad]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                  ></path>
-                </svg>
-              </div>
-            </a>
-          </div>
-          <p class="text-[#adadad] text-base font-normal leading-normal">© 2024 Rukito. All rights reserved.</p>
-        </footer>
-      </div>
-    </footer>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
-  <script type="module" src="public/src/js/file01.js"></script>
-  <script type="module" src="public/src/js/reviews.js"></script>
-  <style>
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
 </html>
